@@ -5,7 +5,7 @@ import time
 # --- 1. CONFIGURATION & STYLING ---
 st.set_page_config(
     page_title="Scribe: Listening & Extraction",
-    page_icon="🌿",
+    page_icon="🩺",
     layout="centered"
 )
 
