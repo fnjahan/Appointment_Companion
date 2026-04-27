@@ -4,7 +4,7 @@ import time
 
 # --- 1. CONFIGURATION & STYLING ---
 st.set_page_config(
-    page_title="Scribe: Listening & Extraction",
+    page_title="Appointment Companion - MVP - Fairuz",
     page_icon="🩺",
     layout="centered"
 )
@@ -12,8 +12,12 @@ st.set_page_config(
 # Custom CSS for a clean, professional aesthetic
 st.markdown("""
     <style>
+    :root {
+        color-scheme: light;
+    }
     .stApp {
         background-color: #F8FAFC;
+        color: #000000;
     }
     .block-container {
         max-width: 860px;
@@ -29,7 +33,7 @@ st.markdown("""
         margin-right: auto;
     }
     .main-header {
-        color: #0F172A;
+        color: #000000;
         font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
         font-weight: 650;
         text-align: center;
@@ -38,24 +42,48 @@ st.markdown("""
         line-height: 1.2;
     }
     .sub-header {
-        color: #475569;
+        color: #000000;
         margin: 0.4rem 0 0.1rem 0;
         font-size: 0.98rem;
         text-align: center;
     }
+    .stApp p,
+    .stApp span,
+    .stApp label,
+    .stApp li,
+    .stApp small,
+    .stApp h1,
+    .stApp h2,
+    .stApp h3,
+    .stApp h4,
+    .stApp h5,
+    .stApp h6,
+    [data-testid="stMarkdownContainer"] *,
+    [data-testid="stWidgetLabel"] *,
+    [data-testid="stStatusWidget"] *,
+    [data-testid="stAlert"] * {
+        color: #000000 !important;
+    }
+    [data-testid="stFileUploader"] small,
+    [data-testid="stFileUploader"] span {
+        color: #000000 !important;
+    }
     .stButton>button {
         width: 100%;
         background-color: #1D4ED8;
-        color: white;
+        color: #FFFFFF !important;
         border-radius: 10px;
         border: none;
         padding: 0.58rem 1rem;
         font-weight: 600;
         transition: 0.2s ease;
     }
+    .stButton>button * {
+        color: #FFFFFF !important;
+    }
     .stButton>button:hover {
         background-color: #1E40AF;
-        color: white;
+        color: #FFFFFF !important;
         border: none;
     }
     div[data-testid="stFileUploaderDropzone"] {
