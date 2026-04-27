@@ -91,6 +91,17 @@ st.markdown("""
         border: 1px dashed #94A3B8;
         border-radius: 10px;
     }
+    /* In dark theme, keep upload prompt text and icon white */
+    @media (prefers-color-scheme: dark) {
+        div[data-testid="stFileUploaderDropzone"] [data-testid="stMarkdownContainer"] *,
+        div[data-testid="stFileUploaderDropzone"] small,
+        div[data-testid="stFileUploaderDropzone"] span,
+        div[data-testid="stFileUploaderDropzone"] svg {
+            color: #FFFFFF !important;
+            fill: #FFFFFF !important;
+            stroke: #FFFFFF !important;
+        }
+    }
     div[data-testid="stStatusWidget"] {
         background-color: #FFFFFF;
         border-radius: 10px;
