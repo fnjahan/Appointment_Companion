@@ -1,0 +1,10 @@
+# Streamlit secrets (CRITICAL)
+.streamlit/
+.env
+
+# Python environment and cache
+__pycache__/
+*.py[cod]
+venv/
+env/
+.DS_Store
