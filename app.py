@@ -4,7 +4,7 @@ import time
 
 # --- 1. CONFIGURATION & STYLING ---
 st.set_page_config(
-    page_title="Scribe: Listening & Extraction",
+    page_title="Appointment Companion MVP",
     page_icon="🩺",
     layout="centered"
 )
@@ -12,8 +12,17 @@ st.set_page_config(
 # Custom CSS for a clean, professional aesthetic
 st.markdown("""
     <style>
+    :root {
+        color-scheme: light;
+    }
     .stApp {
+        --primary-color: #1D4ED8;
+        --background-color: #F8FAFC;
+        --secondary-background-color: #FFFFFF;
+        --text-color: #0F172A;
+        --border-color: #E2E8F0;
         background-color: #F8FAFC;
+        color: #0F172A;
     }
     .block-container {
         max-width: 860px;
@@ -22,11 +31,25 @@ st.markdown("""
         padding-left: 2.1rem;
         padding-right: 2.1rem;
         background-color: #FFFFFF;
-        border: 1px solid #E2E8F0;
+        border: 1px solid var(--border-color);
         border-radius: 14px;
         box-shadow: 0 8px 22px rgba(15, 23, 42, 0.05);
         margin-left: auto;
         margin-right: auto;
+    }
+    .stMarkdown,
+    .stText,
+    p,
+    label,
+    span,
+    li {
+        color: #0F172A;
+    }
+    [data-testid="stHeading"] h1,
+    [data-testid="stHeading"] h2,
+    [data-testid="stHeading"] h3,
+    [data-testid="stHeading"] h4 {
+        color: #0F172A;
     }
     .main-header {
         color: #0F172A;
@@ -45,7 +68,7 @@ st.markdown("""
     }
     .stButton>button {
         width: 100%;
-        background-color: #1D4ED8;
+        background-color: var(--primary-color);
         color: white;
         border-radius: 10px;
         border: none;
@@ -58,6 +81,21 @@ st.markdown("""
         color: white;
         border: none;
     }
+    [data-testid="stBaseButton-secondary"] {
+        border: 1px solid var(--border-color);
+        background-color: #FFFFFF;
+        color: #0F172A;
+    }
+    .stTextInput input,
+    .stTextArea textarea,
+    .stSelectbox div[data-baseweb="select"] > div,
+    .stNumberInput input,
+    .stDateInput input,
+    .stTimeInput input {
+        background-color: #FFFFFF !important;
+        color: #0F172A !important;
+        border-color: #CBD5E1 !important;
+    }
     div[data-testid="stFileUploaderDropzone"] {
         background-color: #FFFFFF;
         border: 1px dashed #94A3B8;
@@ -66,15 +104,20 @@ st.markdown("""
     div[data-testid="stStatusWidget"] {
         background-color: #FFFFFF;
         border-radius: 10px;
-        border: 1px solid #E2E8F0;
+        border: 1px solid var(--border-color);
     }
     div[data-testid="stAlert"] {
         border-radius: 10px;
+        color: #0F172A;
     }
     div[data-testid="stExpander"] {
         background-color: white;
         border-radius: 10px;
-        border: 1px solid #E2E8F0;
+        border: 1px solid var(--border-color);
+        color: #0F172A;
+    }
+    [data-testid="stDivider"] {
+        background-color: #CBD5E1;
     }
     </style>
     """, unsafe_allow_html=True)
